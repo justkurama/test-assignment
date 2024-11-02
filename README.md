@@ -33,11 +33,11 @@ This project is a Star Wars Explorer application built with React, Redux, and Ty
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/your-username/star-wars-explorer.git
+    git clone https://github.com/justkurama/test-assignment.git
     ```
 2. Navigate to the project directory:
     ```sh
-    cd star-wars-explorer
+    cd test-assignment
     ```
 3. Install dependencies:
     ```sh
