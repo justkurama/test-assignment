@@ -1,7 +1,7 @@
-// index.tsx
+// src/index.tsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './styles/global.css'; // Import global styles
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';

@@ -1,27 +1,57 @@
 :root {
-    --color-bg: #d5cfb6;
-    --color-primary: #9d9974;
-    --color-secondary: #3c3c20;
-    --color-accent: #616640;
-    --color-highlight: #75934e;
+    --color-bg: #1c1c2e; 
+    --color-primary: #657b83;
+    --color-secondary: #a5c0cf;
+    --color-accent: #5b96aa;
+    --color-highlight: #b4d7e1; 
     --font-family: 'Arial', sans-serif;
   }
   
+  
   body {
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    font-family: var(--font-family);
-    background-color: var(--color-bg);
+    background-image: url('../../public/assets/bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
     color: var(--color-secondary);
+  }
+  
+  .sidebar {
+    background-color: var(--color-bg);
+    color: var(--color-highlight);
+  }
+  
+  .sidebar a {
+    color: var(--color-highlight);
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: flex-end; /* Align to the right */
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: var(--color-bg);
+    border-radius: 5px;
+  }
+  
+  .pagination button, .pagination span {
+    color: var(--color-bg);
+    background-color: var(--color-highlight);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .pagination button:hover, .pagination span:hover {
+    background-color: var(--color-accent);
   }
   
   h1, h2, h3, h4, h5, h6 {
     color: var(--color-primary);
-  }
-  
-  a {
-    color: var(--color-highlight);
-    text-decoration: none;
   }
   
   a:hover {
@@ -29,14 +59,16 @@
   }
   
   button {
-    background-color: var(--color-primary);
+    background-color: var(--color-accent);
     color: var(--color-bg);
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     font-family: var(--font-family);
+    border-radius: 5px;
   }
   
   button:hover {
     background-color: var(--color-highlight);
   }
+  

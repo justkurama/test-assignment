@@ -5,11 +5,12 @@ import { RootState, AppDispatch } from '../store/store';
 import Pagination from './common/Pagination';
 import { getEntities } from '../features/entitySlice';
 import { EntityType } from '../types/types';
+import './EntityList.css';
 
 const EntityList: React.FC = () => {
   const { entity } = useParams<{ entity: EntityType }>();
   const dispatch = useDispatch<AppDispatch>();
-  const data = useSelector((state: RootState) => entity ? state.entity[entity] : []);
+  const data = useSelector((state: RootState) => (entity ? state.entity[entity] : []));
   const loading = useSelector((state: RootState) => state.entity.loading);
   const error = useSelector((state: RootState) => state.entity.error);
   const [currentPage, setCurrentPage] = useState(1);
@@ -39,12 +40,17 @@ const EntityList: React.FC = () => {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div>
-      <h2>{entity.charAt(0).toUpperCase() + entity.slice(1)}</h2>
-      <ul>
+    <div className="entity-list-container">
+      <h2 style={{ color: 'var(--color-primary)' }}>
+        {entity.charAt(0).toUpperCase() + entity.slice(1)}
+      </h2>
+      <ul className="entity-list">
         {data.map((item: any) => (
-          <li key={item.name || item.title}>
-            <Link to={`/${entity}/${item.url.split('/').slice(-2, -1)[0]}`}>{item.name || item.title}</Link>
+          <li key={item.name || item.title} className="entity-list-item">
+            <h3>{item.name || item.title}</h3>
+            <Link to={`/${entity}/${item.url.split('/').slice(-2, -1)[0]}`}>
+              <p>View Details</p>
+            </Link>
           </li>
         ))}
       </ul>

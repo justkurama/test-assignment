@@ -1,15 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Navbar.css'; 
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
+import { logout } from '../../features/authSlice';
+import './Navbar.css';
 
 const Navbar = () => {
 return (
     <nav className="navbar">
-        <h1>Star Wars Explorer</h1>
+        <Link to="/">
+            <h1>Star Wars Explorer</h1>
+        </Link>
         <ul className="navbar-links">
-            <li>
-                <Link to="/">Home</Link>
-            </li>
             <li>
                 <Link to="/people">People</Link>
             </li>

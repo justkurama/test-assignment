@@ -1,33 +1,57 @@
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 10%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    color: var(--color-highlight);
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
-    padding: 1rem;
-    background-color: #333;
-    color: #fff;
-  }
-  
-  .navbar h1 {
-    margin: 0;
-    font-size: 1.5rem;
-  }
-  
-  .navbar-links {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .navbar-links li {
-    display: inline;
-  }
-  
-  .navbar-links a {
-    color: #fff;
+    padding: 10px;
+    z-index: 1000; 
+}
+
+.navbar h1 {
+    font-size: 2rem;
+    margin-right: 2rem;
+    color: var(--color-primary);
+    padding: 25px;
     text-decoration: none;
-  }
-  
-  .navbar-links a:hover {
-    text-decoration: underline;
-  }
-  
+    display: block;
+    text-align: center;
+}
+
+.navbar-links {
+    list-style: none;
+    padding: 25px;
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+}
+
+.navbar-links li {
+    margin: 0 1rem;
+}
+
+.navbar-links a {
+    color: var(--color-highlight);
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+    text-align: center;
+}
+
+.navbar-links a:hover {
+    background-color: var(--color-accent);
+    border-radius: 5px;
+    padding: 5px 0;
+    width: 130%;
+}
+
+/* Add padding to the top of the main content to avoid overlap */
+.main-content {
+    padding-top: 12%; /* Adjust this value to match the height of the navbar */
+}

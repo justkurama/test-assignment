@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { login } from '../features/authSlice';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import './LoginPage.css'
 
 const schema = yup.object().shape({
   username: yup.string().required('Username is required'),

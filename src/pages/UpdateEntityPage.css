@@ -1,4 +1,4 @@
-.entity-detail {
+.update-entity-page {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,62 +10,60 @@
     max-width: 1000px;
     margin: 0 auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    color: #333;
 }
 
-.entity-detail h2 {
+.update-entity-page h2 {
     margin: 0;
     font-size: 2rem;
-    color: #222;
+    color: var(--color-primary);
 }
 
-.entity-detail ul {
-    list-style: none;
-    padding: 0;
+.update-entity-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     width: 100%;
 }
 
-.entity-detail li {
+.update-entity-page ul {
+    list-style: none;
+    padding: 0;
+}
+
+.update-entity-page li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    padding: 10px;
     background-color: var(--color-secondary);
-    border-radius: 8px;
+    border-radius: 5px;
     transition: background-color 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.entity-detail li:hover {
+.update-entity-page li:hover {
     background-color: var(--color-accent);
 }
 
-.entity-detail li strong {
+.update-entity-page label {
     font-size: 1.2rem;
-    color: #222;
+    color: var(--color-primary);
 }
 
-.entity-detail li span,
-.entity-detail li input {
-    font-size: 1rem;
-    color: #333;
-}
-
-.entity-detail input {
+.update-entity-page input {
     background-color: var(--color-bg);
-    color: #333;
+    color: var(--color-highlight);
     border: 1px solid var(--color-accent);
     border-radius: 5px;
     padding: 10px;
     width: 100%;
 }
 
-.entity-detail input:focus {
-    border-color: #333;
+.update-entity-page input:focus {
+    border-color: var(--color-highlight);
     outline: none;
 }
 
-.entity-detail button {
+.update-entity-page button {
     background-color: var(--color-accent);
     color: var(--color-bg);
     border: none;
@@ -73,26 +71,10 @@
     cursor: pointer;
     font-family: var(--font-family);
     border-radius: 5px;
-    text-decoration: none;
-    display: block;
+    text-decoration: none; /* Remove underline */
+    display: block; /* Make it look like a button */
 }
 
-.entity-detail button:hover {
-    background-color: #333;
-}
-
-.message-box {
-    padding: 20px;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-    color: #333;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 20px;
-}
-
-.message-box p {
-    margin: 0;
-    font-size: 1rem;
-    color: #333;
+.update-entity-page button:hover {
+    background-color: var(--color-highlight);
 }
