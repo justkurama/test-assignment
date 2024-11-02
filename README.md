@@ -2,6 +2,52 @@
 
 This project is a Star Wars Explorer application built with React, Redux, and TypeScript. It allows users to explore various entities from the Star Wars universe, including people, films, vehicles, starships, planets, and species.
 
+## Features
+
+- **Entity Exploration**: Browse and view details of various Star Wars entities such as people, films, vehicles, starships, planets, and species.
+- **Authentication**: Secure login functionality to access private routes.
+- **State Management**: Utilizes Redux for state management.
+- **Responsive Design**: Ensures a seamless experience across different devices.
+- **Data Persistence**: Local storage is used to persist data.
+
+## Technology Used
+
+- **React**: For building the user interface.
+- **Redux**: For state management.
+- **TypeScript**: For type safety and better development experience.
+- **React Router**: For routing.
+- **React Hook Form**: For form handling.
+- **Yup**: For form validation.
+- **Styled Components**: For styling components.
+- **Axios**: For making API requests.
+
+## Functionality
+
+- **Home Page**: Displays a welcome message and project description.
+- **Login Page**: Allows users to log in with a username and password.
+- **Entity List**: Displays a list of entities fetched from the Star Wars API.
+- **Entity Detail**: Shows detailed information about a selected entity.
+- **Update Entity**: Allows users to update entity details and save changes to local storage.
+
+## Installation
+
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/your-username/star-wars-explorer.git
+    ```
+2. Navigate to the project directory:
+    ```sh
+    cd star-wars-explorer
+    ```
+3. Install dependencies:
+    ```sh
+    npm install
+    ```
+4. Start the development server:
+    ```sh
+    npm start
+    ```
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -39,51 +85,6 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However, we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Project Structure
+## Contribution
 
-```plaintext
-src/
-├── api/
-│   ├── entities/
-│   │   ├── filmsAPI.ts
-│   │   ├── peopleAPI.ts
-│   │   ├── planetsAPI.ts
-│   │   ├── speciesAPI.ts
-│   │   ├── starshipsAPI.ts
-│   │   └── vehiclesAPI.ts
-│   └── swapi.ts
-├── components/
-│   ├── common/
-│   │   ├── Navbar.tsx
-│   │   ├── Navbar.css
-│   │   └── Pagination.tsx
-│   ├── entities/
-│   │   ├── FilmList.tsx
-│   │   ├── PeopleList.tsx
-│   │   ├── PlanetList.tsx
-│   │   ├── SpeciesList.tsx
-│   │   ├── StarshipList.tsx
-│   │   └── VehicleList.tsx
-│   └── LoginForm.tsx
-├── features/
-│   ├── authSlice.ts
-│   └── entitySlice.ts
-├── pages/
-│   ├── entities/
-│   │   ├── FilmPage.tsx
-│   │   ├── PeoplePage.tsx
-│   │   ├── PlanetPage.tsx
-│   │   ├── SpeciesPage.tsx
-│   │   ├── StarshipPage.tsx
-│   │   └── VehiclePage.tsx
-│   ├── HomePage.tsx
-│   └── LoginPage.tsx
-├── store/
-│   └── store.ts
-├── types/
-│   └── [types.ts](http://_vscodecontentref_/0)
-├── App.tsx
-├── App.css
-├── index.tsx
-├── index.css
-└── react-app-env.d.ts
+Contributions are welcome! If you have any suggestions or improvements, please create an issue or submit a pull request.
