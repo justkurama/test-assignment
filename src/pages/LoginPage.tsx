@@ -1,11 +1,12 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../features/authSlice';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import './LoginPage.css'
+import '../styles/LoginPage.css';
+import { RootState } from '../store/store';
 
 const schema = yup.object().shape({
   username: yup.string().required('Username is required'),
@@ -18,6 +19,7 @@ const LoginPage: React.FC = () => {
   });
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
 
   const onSubmit = (data: any) => {
     if (data.username === 'admin' && data.password === 'password') {
@@ -27,6 +29,10 @@ const LoginPage: React.FC = () => {
       alert('Invalid login');
     }
   };
+
+  if (isAuthenticated) {
+    return <div className="container">You are already logged in.</div>;
+  }
 
   return (
     <div className="container mt-5">

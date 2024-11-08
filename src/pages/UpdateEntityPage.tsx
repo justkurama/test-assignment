@@ -1,15 +1,32 @@
 // src/pages/UpdateEntityPage.tsx
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { useForm, SubmitHandler, FieldError } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 import { fetchEntity } from '../api/swapi';
 import { EntityType } from '../types/types';
-import './UpdateEntityPage.css';
+import '../styles/UpdateEntityPage.css';
+
+// Define the validation schema
+const schema = yup.object().shape({
+  name: yup.string().required('Name is required'),
+  height: yup.number().required('Height is required').positive('Height must be a positive number'),
+  mass: yup.number().required('Mass is required').positive('Mass must be a positive number'),
+  hair_color: yup.string().required('Hair color is required'),
+  skin_color: yup.string().required('Skin color is required'),
+  eye_color: yup.string().required('Eye color is required'),
+  birth_year: yup.string().required('Birth year is required'),
+  gender: yup.string().required('Gender is required'),
+  // Add more fields as needed with their respective validation rules
+});
 
 const UpdateEntityPage: React.FC = () => {
   const { entity, id } = useParams<{ entity: EntityType; id: string }>();
   const [data, setData] = useState<any>(null);
-  const { register, handleSubmit, setValue } = useForm<any>();
+  const { register, handleSubmit, setValue, formState: { errors } } = useForm<any>({
+    resolver: yupResolver(schema),
+  });
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -50,6 +67,7 @@ const UpdateEntityPage: React.FC = () => {
               <li key={key}>
                 <label>{key.replace('_', ' ')}:</label>
                 <input {...register(key)} defaultValue={value as string | number | readonly string[] | undefined} />
+                {errors[key] && <p className="text-danger">{(errors[key] as FieldError).message}</p>}
               </li>
             );
           })}

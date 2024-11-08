@@ -17,6 +17,7 @@
     background-attachment: fixed;
     background-position: center;
     color: var(--color-secondary);
+    padding-top: 15%; /* Adjust this value to match the height of the navbar */
   }
   
   .sidebar {
@@ -71,4 +72,22 @@
   button:hover {
     background-color: var(--color-highlight);
   }
+
+  @media (max-width: 768px) {
+    body {
+      font-size: 14px;
+      padding-top: 20%; /* Adjust this value to match the height of the navbar */
+    }
   
+    .sidebar {
+      padding: 10px;
+    }
+  
+    .pagination {
+      padding: 5px 10px;
+    }
+  
+    button {
+      padding: 8px 16px;
+    }
+  }

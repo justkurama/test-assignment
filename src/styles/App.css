@@ -22,6 +22,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding-top: 15%; /* Adjust this value to match the height of the navbar */
 }
 
 .App-link {
@@ -34,5 +35,16 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .App-header {
+    font-size: calc(8px + 2vmin);
+    padding-top: 20%; /* Adjust this value to match the height of the navbar */
+  }
+
+  .App-link {
+    font-size: 14px;
   }
 }

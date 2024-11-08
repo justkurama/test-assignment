@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { fetchEntity } from '../api/swapi';
 import { EntityType } from '../types/types';
-import './EntityDetail.css';
+import '../styles/EntityDetail.css';
 
 const EntityDetail: React.FC = () => {
   const { entity, id } = useParams<{ entity: EntityType; id: string }>();

@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    padding: 1rem;
+    padding: 1rem 10px;
     box-sizing: border-box;
 }
 
@@ -15,7 +15,7 @@
     border-radius: 10px;
     color: var(--color-highlight);
     margin: 1rem;
-    max-width: 600px;
+    max-width: 90%;
     width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -68,4 +68,27 @@
 
 .text-danger {
     color: var(--color-highlight);
+}
+
+@media (max-width: 768px) {
+    .card {
+        padding: 1rem;
+        max-width: 100%;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+    }
+
+    .form-control {
+        padding: 8px;
+    }
+
+    .btn-primary {
+        padding: 8px;
+    }
+
+    .message-box {
+        padding: 10px;
+    }
 }

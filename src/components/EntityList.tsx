@@ -5,7 +5,7 @@ import { RootState, AppDispatch } from '../store/store';
 import Pagination from './common/Pagination';
 import { getEntities } from '../features/entitySlice';
 import { EntityType } from '../types/types';
-import './EntityList.css';
+import '../styles/EntityList.css';
 
 const EntityList: React.FC = () => {
   const { entity } = useParams<{ entity: EntityType }>();
